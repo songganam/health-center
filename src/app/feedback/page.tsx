@@ -1,32 +1,24 @@
-'use client';
 import HeaderComponent from '@/components/common/HeaderComponent';
 import Link from 'next/link';
+import React from 'react';
 import styles from '@/styles/header.module.scss';
 import { SlActionRedo } from 'react-icons/sl';
-
-export default function Home() {
+const Feedback = (): JSX.Element => {
   return (
     <>
       <HeaderComponent
         rightElements={[
-          <button
-            key="share"
-            className={styles.box}
-            onClick={() => {
-              alert('지도공유');
-            }}
-          >
-            <SlActionRedo />
-          </button>,
           <Link key="feedback" href="/feedback" className={styles.box}>
-            <SlActionRedo />
+                <SlActionRedo />
           </Link>,
           <Link key="about" href="/about" className={styles.box}>
-            <SlActionRedo />
+                <SlActionRedo />
           </Link>,
         ]}
       />
-      <main>테스트</main>
+      <main>여기는 피드백입니다.</main>
     </>
   );
-}
+};
+
+export default Feedback;
